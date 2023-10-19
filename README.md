@@ -48,6 +48,8 @@ npm run build:stage
 
 # 构建生产环境
 npm run build:prod
+# 会将编译内容生成到hcs-web-maintain/dist目录下，将dist目录下的app拷贝的android项目下即可
+# 其实就是将./dist/app/src/main/assets/下的内容拷贝的android项目的asset目录下。
 ```
 ## node版本
 实测v13.14.0正常，其它版本不能确定。
