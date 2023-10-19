@@ -1,8 +1,8 @@
 ## 开发
 
 ```bash
-# 克隆项目 (请用ssh的形式克隆，因为里面包含的子模块都是已ssh的形式添加的)
-git clone git@192.168.50.140:netwolf/hcs-web-maintain.git
+# 克隆项目 (请用https的形式克隆，因为里面包含的子模块都是以https的形式添加的)
+git clone https://github.com/netwolf712/hcs-web-maintain.git
 
 # 下载子模块
 进入hcs-web-maintain目录后，调用

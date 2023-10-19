@@ -1,18 +1,22 @@
-import { getRouters } from "@/api/menu";
+import { getRouters, getTemplateSettings} from "@/api/menu";
 import { getMaintainRouters } from "@maintainModule/api/menu";
 
 // 生成路由
 export function generateModuleRoutes() {
   const baseRouter = getRouters();
-  //将子模块的数据也插入其中
-  const miantainRouter = getMaintainRouters();
-  miantainRouter.sidebarRoutes.forEach((element) => {
-    baseRouter.sidebarRoutes.push(element);
-  });
-
-  miantainRouter.rewriteRoutes.forEach((element) => {
-    baseRouter.rewriteRoutes.push(element);
-  });
-
+  //将首页模板插入其中
+  addMenu(getTemplateSettings(), baseRouter);  
+  //将维护子模块的菜单插入其中
+  addMenu(getMaintainRouters(), baseRouter);
   return baseRouter;
+}
+
+function addMenu(srcRouter, dstRouter) {
+  srcRouter.sidebarRoutes.forEach((element) => {
+    dstRouter.sidebarRoutes.push(element);
+  });
+
+  srcRouter.rewriteRoutes.forEach((element) => {
+    dstRouter.rewriteRoutes.push(element);
+  });
 }

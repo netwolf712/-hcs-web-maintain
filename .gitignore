@@ -24,3 +24,4 @@ linphone-sdk-android/*.aar
 app/release
 app/src/main/res/xml/contacts.xml
 node_modules
+dist
